@@ -3,6 +3,7 @@ package com.anticheat.violation;
 import com.anticheat.AnticheatPlugin;
 import com.anticheat.checks.Check;
 import org.bukkit.Bukkit;
+import org.bukkit.BanList;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -75,7 +76,10 @@ public class ViolationManager {
 
         switch (punishment.toLowerCase()) {
             case "kick" -> Bukkit.getScheduler().runTask(plugin, () -> player.kickPlayer(message));
-            case "ban" -> Bukkit.getScheduler().runTask(plugin, () -> player.banPlayerIP(message, null, "Anticheat"));
+            case "ban" -> Bukkit.getScheduler().runTask(plugin, () -> {
+                player.kickPlayer(message);
+                Bukkit.getBanList(BanList.Type.NAME).addBan(player.getName(), message, null, null);
+            });
             case "warn" -> player.sendMessage(message);
             default -> Bukkit.getScheduler().runTask(plugin, () -> player.kickPlayer(message));
         }
