@@ -13,7 +13,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.*;
-import org.bukkit.event.player.PlayerSwingEvent;
 import org.bukkit.util.Vector;
 
 public class PlayerListener implements Listener {
