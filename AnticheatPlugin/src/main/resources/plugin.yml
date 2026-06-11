@@ -1,0 +1,26 @@
+name: AnticheatPlugin
+version: 1.0.0
+main: com.anticheat.AnticheatPlugin
+api-version: '1.21'
+author: Developer
+description: Comprehensive anti-cheat plugin for Paper 1.21.1
+
+commands:
+  anticheat:
+    description: Comando principale dell'anti-cheat
+    aliases: [ac]
+    usage: /<command> <subcomando>
+
+permissions:
+  anticheat.alerts:
+    description: Permette di ricevere gli alert degli cheat
+    default: op
+  anticheat.bypass:
+    description: Permette di bypassare i controlli
+    default: false
+  anticheat.admin:
+    description: Permette di gestire il plugin
+    default: op
+  anticheat.debug:
+    description: Permette di vedere i debug
+    default: false
