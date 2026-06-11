@@ -170,7 +170,7 @@ public class PlayerListener implements Listener {
     }
 
     @EventHandler
-    public void onPlayerSwing(PlayerSwingEvent event) {
+    public void onPlayerAnimation(PlayerAnimationEvent event) {
         Player player = event.getPlayer();
         PlayerData data = plugin.getPlayerDataManager().getData(player);
         if (data == null) return;
